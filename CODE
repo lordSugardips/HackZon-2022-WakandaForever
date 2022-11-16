@@ -1,0 +1,84 @@
+import json
+from re import L
+from flask import Flask, request, jsonify, Response
+app = Flask(_name_)
+
+n_words = 25
+
+@app.route('/')
+def hello_world():
+    return 'Server Active'
+
+@app.route('/set_n_words', methods=['POST'])
+def set_n_words():
+    global n_words
+    n_words = int(request.json['n_words'])
+    print('n words set to:', n_words)
+    status_code = Response(status=200)
+    return status_code
+
+@app.route('/summarize_web', methods=['POST'])
+def summarize_web():
+    content = request.json
+
+    url = content['url']
+
+    summary = url_summary(url, n_words)
+    print('result:', summary)
+
+    return jsonify({ 'summary': summary, 'n_words': n_words })
+
+@app.route('/summarize_youtube', methods=['POST'])
+def summarize_youtube():
+    content = request.json
+
+    url = content['url']
+
+    summary = fetch_transcript(url, n_words)
+    print('result', summary)
+
+    return jsonify({ 'summary': summary, 'n_words': n_words })
+
+@app.route('/translate_page', methods=['POST'])
+def translate_page():
+    content = request.json
+
+    url = content['url']
+
+    summary = lang_convert(url)
+    print('result', summary)
+
+    return jsonify({ 'summary': summary, 'n_words': n_words })
+
+@app.route('/secure_page', methods=['POST'])
+def secure_page():
+    content = request.json
+
+    url = content['url']
+
+    summary = foreign_video(url, n_words)
+    print('lang convert result', summary)
+
+    return jsonify({ 'summary': summary, 'n_words': n_words })
+
+@app.route('/explicit', methods=['POST'])
+def explicit_page():
+    content = request.json
+url = content['url']
+
+    summary = check_profanity(url)
+    print('result', summary)
+
+    return jsonify({ 'summary': summary, 'n_words': n_words })
+
+
+@app.route('/playlist', methods=['POST'])
+def playlist():
+    content = request.json
+
+    url = content['url']
+
+    summary = playlist_yt(url)
+    print('result', summary)
+
+    return jsonify({ 'summary': summary, 'n_words': n_words })

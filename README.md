@@ -25,19 +25,18 @@ Screenshots:
 
 
 
-2) User interface of extension with text slider:
-<img src="https://github.com/lordSugardips/HackZon-2022-WakandaForever/blob/main/Foreign%20video%20summ.%20interface.jpeg" width=800>
-
-
-
-3) Website summarization using extension:
+2) Website summarization using extension:
 <img src="https://github.com/lordSugardips/HackZon-2022-WakandaForever/blob/main/Website%20summ..png" width=800>
 
 
 
-4) Video summarization using extension:
+3) Video summarization using extension:
 <img src="https://github.com/lordSugardips/HackZon-2022-WakandaForever/blob/main/Youtube%20summ..png" width=800>
 
+
+
+4) User interface of extension with text slider:
+<img src="https://github.com/lordSugardips/HackZon-2022-WakandaForever/blob/main/Foreign%20video%20summ.%20interface.jpeg" width=800>
 
 
 5) Foreign video summarization:
